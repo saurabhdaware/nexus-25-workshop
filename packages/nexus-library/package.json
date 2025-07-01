@@ -1,0 +1,8 @@
+{
+  "name": "nexus-library",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  }
+}
