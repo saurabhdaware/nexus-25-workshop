@@ -1,9 +1,9 @@
-import { Text } from "nexus-library/components";
+import { Box } from "nexus-library";
 
 function App() {
   return (
     <div>
-      <Text />
+      <Box variant="primary">Hello</Box>
     </div>
   );
 }

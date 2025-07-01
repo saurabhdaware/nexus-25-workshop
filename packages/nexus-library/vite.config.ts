@@ -1,12 +1,23 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    // @ts-expect-error - Vite version compatibility issue
+    dts({
+      insertTypesEntry: true,
+      outDir: "dist",
+      include: ["src/**/*"],
+      exclude: ["src/**/*.test.*", "src/**/*.stories.*"],
+      tsconfigPath: "tsconfig.json",
+    }),
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
@@ -15,16 +26,17 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: true,
-    minify: false, // Optional: easier to debug
+    minify: false,
     rollupOptions: {
-      // Add peer dependencies to external if needed, e.g. external: ['react']
+      external: ["react", "react/jsx-runtime"],
       output: {
         preserveModules: true,
         preserveModulesRoot: "src",
-        assetFileNames: "assets/[name][extname]",
+        assetFileNames: "[name][extname]",
         entryFileNames: "[name].js",
       },
-      external: ["react", "react/jsx-runtime"],
     },
+    // Include CSS in build
+    cssCodeSplit: false,
   },
 });

@@ -1,1 +1,2 @@
-export * from "./Text";
+export { Box } from "./Box";
+export { Text } from "./Text";
