@@ -1,8 +1,23 @@
 {
   "name": "nexus-library",
   "type": "module",
-  "main": "./index.js",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "vite build"
+  },
   "exports": {
-    ".": "./index.js"
+    "./components": "./dist/components/index.js"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.5.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vite": "^7.0.0"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }

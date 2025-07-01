@@ -1,4 +1,4 @@
-import { Text } from "nexus-library";
+import { Text } from "nexus-library/components";
 
 function App() {
   return (
