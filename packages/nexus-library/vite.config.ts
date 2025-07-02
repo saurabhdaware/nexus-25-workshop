@@ -8,8 +8,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
+    // @ts-expect-error: vite version compatibility issue
     react(),
-    // @ts-expect-error - Vite version compatibility issue
     dts({
       insertTypesEntry: true,
       outDir: "dist",
@@ -20,12 +20,13 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: {
+        index: resolve(__dirname, "src/index.ts"),
+        styles: resolve(__dirname, "src/styles.css"),
+      },
       formats: ["es"],
     },
     outDir: "dist",
-    emptyOutDir: true,
-    sourcemap: true,
     minify: false,
     rollupOptions: {
       external: ["react", "react/jsx-runtime"],
@@ -36,7 +37,6 @@ export default defineConfig({
         entryFileNames: "[name].js",
       },
     },
-    // Include CSS in build
-    cssCodeSplit: false,
+    cssCodeSplit: true,
   },
 });

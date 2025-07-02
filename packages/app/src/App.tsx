@@ -1,9 +1,9 @@
-import { Box } from "nexus-library";
+import { Button } from "nexus-library";
 
 function App() {
   return (
-    <div>
-      <Box variant="primary">Hello</Box>
+    <div className="light">
+      <Button variant="tertiary">Hello</Button>
     </div>
   );
 }

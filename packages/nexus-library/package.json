@@ -13,7 +13,8 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
-    }
+    },
+    "./setup.css": "./dist/styles.css"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.54.0",

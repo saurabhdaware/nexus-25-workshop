@@ -1,34 +1,16 @@
-# "Design System for Scale" by Saurabh Daware at React Nexus 2025
+## Steps
 
-## Prompt 1
-
-````md
-Create a new Vite React TypeScript project and convert it into a component library with the following requirements:
-
-## Setup Monorepo with PNPM Workspaces
-
-- Create `packages` directory with `app` directory and `nexus-library` directory.
-- `app` directory should be a demo app that uses the `nexus-library`
-- Create pnpm workspace with `app` and `nexus-library` packages
-
-## Setting Up the `app` package
-
-- Scaffold a new Vite React TypeScript project
-- Remove unnecessary `.css` files and their instances in `App.tsx` and `main.tsx`
-- cd to root
-- Move typescript config, eslint config, etc to root directory and include `packages` directory in `include` array
-- Run `pnpm install`
-
-## Setting Up the `nexus-library` package
-
-- Just add `index.ts` file with the following content:
-
-```tsx
-export const add = (a: number, b: number) => a + b;
-```
-
-## Instructions
-
-- No need to install `nexus-library` in `app` package yet. We will do that later.
-- Do not do anything beyond the above instructions
-````
+- [x] Step 0: Monorepo Setup (Also show how to use `pnpm` workspaces and install `nexus-library` in `app` package)
+- [x] Step 1: Build Setup in `nexus-library`
+- [x] Step 2: Panda CSS Setup in `nexus-library`
+- [x] Step 3: Tokens Architecture
+  - Slides then Implementation
+  - Show different themes
+  - Show white labelling
+- Step 4: Component API, Base Component Structure
+  - Component API - Slides
+  - BaseBox Architecture
+- Step 5: Motion Slides
+- Step 6: MCP Slides
+- Step 7: MCP implementation demo
+- Step 8: MCP
