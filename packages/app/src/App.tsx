@@ -1,7 +1,11 @@
-import { add } from "nexus-library";
+import { Text } from "nexus-library";
 
 function App() {
-  return <div>hi {add(1, 3224324324)}</div>;
+  return (
+    <div>
+      <Text as="p">Hello React Nexus</Text>
+    </div>
+  );
 }
 
 export default App;

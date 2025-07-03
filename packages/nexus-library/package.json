@@ -2,7 +2,20 @@
   "name": "nexus-library",
   "version": "0.0.0",
   "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
   "exports": {
-    ".": "./add.js"
+    ".": "./src/index.js"
+  },
+  "dependencies": {
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@vitejs/plugin-react": "^4.5.2",
+    "vite": "^7.0.0",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
