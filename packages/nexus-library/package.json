@@ -1,0 +1,8 @@
+{
+  "name": "nexus-library",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./add.js"
+  }
+}

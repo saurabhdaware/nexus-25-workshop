@@ -35,6 +35,9 @@ importers:
 
   packages/app:
     dependencies:
+      nexus-library:
+        specifier: workspace:^
+        version: link:../nexus-library
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -54,6 +57,8 @@ importers:
       vite:
         specifier: ^7.0.0
         version: 7.0.0(@types/node@24.0.8)(lightningcss@1.25.1)
+
+  packages/nexus-library: {}
 
 packages:
 
