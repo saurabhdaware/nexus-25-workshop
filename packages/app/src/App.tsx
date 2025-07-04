@@ -1,9 +1,9 @@
-import { Text } from "nexus-library";
+import { Button } from "nexus-library";
 
 function App() {
   return (
     <div>
-      <Text as="p">Hello React Nexus</Text>
+      <Button onClick={() => console.log("clicked")}>Hello React Nexus</Button>
     </div>
   );
 }

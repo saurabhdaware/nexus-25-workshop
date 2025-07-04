@@ -24,7 +24,7 @@ export default defineConfig({
     // entry files definitions
     lib: {
       entry: {
-        index: resolve(__dirname, "src/index.tsx"),
+        index: resolve(__dirname, "src/index.ts"),
       },
       formats: ["es"],
     },
@@ -36,7 +36,7 @@ export default defineConfig({
     minify: false,
     rollupOptions: {
       // Marking react as external to avoid bundling it with the library
-      external: ["react", "react/jsx-runtime"],
+      external: ["react", "react/jsx-runtime", "styled-components"],
       output: {
         // preserve modules to keep the original file structure and not merge them into a single file
         preserveModules: true,

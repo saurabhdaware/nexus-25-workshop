@@ -10,12 +10,14 @@
     ".": "./src/index.js"
   },
   "peerDependencies": {
-    "react": "^19.1.0"
+    "react": "^19.1.0",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "react": "^19.1.0",
     "@types/react": "^19.1.8",
     "@vitejs/plugin-react": "^4.5.2",
+    "react": "^19.1.0",
+    "styled-components": "^6.1.19",
     "vite": "^7.0.0",
     "vite-plugin-dts": "^4.5.4"
   }
