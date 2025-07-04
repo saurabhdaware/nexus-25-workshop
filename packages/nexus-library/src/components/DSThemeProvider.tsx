@@ -14,6 +14,7 @@ const DSThemeProvider = ({
   children,
 }: DSThemeProviderProps) => {
   const selectedTheme = {
+    ...themeTokens,
     colors: themeTokens.colors[colorScheme],
   };
 
