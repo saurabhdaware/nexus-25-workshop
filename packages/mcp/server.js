@@ -19,58 +19,71 @@ const validComponents = ["Box", "Button"];
 
 // Add an addition tool
 server.registerTool(
-  "get_component_docs",
+  "add",
   {
-    title: "Get Component Docs",
-    description:
-      "Returns the documentation for the given comma separated list of components. ALWAYS use this for understanding componenents before generating UI",
-    inputSchema: {
-      componentNames: z
-        .string()
-        .describe(
-          `Comma separated list of components. E.g. 'Box, Button'. Possible Components: ${validComponents.join(
-            ", "
-          )}`
-        ),
-    },
+    title: "Addition Tool",
+    description: "Add two numbers",
+    inputSchema: { a: z.number(), b: z.number() },
   },
-  async ({ componentNames }) => {
-    // check if componentNames is a valid list of components
-    const componentNamesList = componentNames.split(",");
-    const invalidComponents = componentNamesList.filter(
-      (name) => !validComponents.includes(name.trim())
-    );
-    if (invalidComponents.length > 0) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: `Invalid components: ${invalidComponents.join(
-              ", "
-            )}. Valid components: ${validComponents.join(", ")}`,
-          },
-        ],
-      };
-    }
-
-    const componentDocs = componentNames.split(",").map((name) => {
-      const response = fs.readFileSync(
-        path.join(__dirname, `knowledgebase/${name.trim()}.md`),
-        "utf8"
-      );
-      return {
-        name,
-        docs: response,
-      };
-    });
-
-    return {
-      content: [
-        { type: "text", text: componentDocs.map((doc) => doc.docs).join("\n") },
-      ],
-    };
-  }
+  async ({ a, b }) => ({
+    content: [{ type: "text", text: String(a + b) }],
+  })
 );
+
+// // Add an addition tool
+// server.registerTool(
+//   "get_component_docs",
+//   {
+//     title: "Get Component Docs",
+//     description:
+//       "Returns the documentation for the given comma separated list of components. ALWAYS use this for understanding componenents before generating UI",
+//     inputSchema: {
+//       componentNames: z
+//         .string()
+//         .describe(
+//           `Comma separated list of components. E.g. 'Box, Button'. Possible Components: ${validComponents.join(
+//             ", "
+//           )}`
+//         ),
+//     },
+//   },
+//   async ({ componentNames }) => {
+//     // check if componentNames is a valid list of components
+//     const componentNamesList = componentNames.split(",");
+//     const invalidComponents = componentNamesList.filter(
+//       (name) => !validComponents.includes(name.trim())
+//     );
+//     if (invalidComponents.length > 0) {
+//       return {
+//         content: [
+//           {
+//             type: "text",
+//             text: `Invalid components: ${invalidComponents.join(
+//               ", "
+//             )}. Valid components: ${validComponents.join(", ")}`,
+//           },
+//         ],
+//       };
+//     }
+
+//     const componentDocs = componentNames.split(",").map((name) => {
+//       const response = fs.readFileSync(
+//         path.join(__dirname, `knowledgebase/${name.trim()}.md`),
+//         "utf8"
+//       );
+//       return {
+//         name,
+//         docs: response,
+//       };
+//     });
+
+//     return {
+//       content: [
+//         { type: "text", text: componentDocs.map((doc) => doc.docs).join("\n") },
+//       ],
+//     };
+//   }
+// );
 
 // Start receiving messages on stdin and sending messages on stdout
 const transport = new StdioServerTransport();
