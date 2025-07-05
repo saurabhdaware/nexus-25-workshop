@@ -1,13 +1,11 @@
 import { Box, Button } from "nexus-library";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
-    <Box
-      backgroundColor="surface.background.gray.subtle"
-      color="surface.text.gray.normal"
-    >
-      <Button onClick={() => console.log("clicked")}>Hello React Nexus</Button>
-      <p>Hi there!!!</p>
+    <Box marginTop="spacing.5" marginLeft="spacing.5">
+      <Button onClick={() => setCount(count + 1)}>Count: {count}</Button>
     </Box>
   );
 }

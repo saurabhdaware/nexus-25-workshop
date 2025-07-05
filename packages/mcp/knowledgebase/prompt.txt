@@ -1,0 +1,22 @@
+- Create a knowledgebase for given component based on following format. Try to keep the knowledge minimal for component
+- Create a markdown file in `<project-root>/knowledgebase/${ComponentName}.md`
+
+<FORMAT>
+
+## {ComponentName}
+
+2 lines description of component and when to use it
+
+### Types
+
+Supported types along with jsdoc for each prop
+
+```ts
+
+```
+
+### Examples
+
+2-3 examples for the component
+
+</FORMAT>
