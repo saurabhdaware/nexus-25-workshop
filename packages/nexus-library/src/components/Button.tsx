@@ -11,7 +11,8 @@ const StyledButton = styled.button`
     theme.colors.surface.background.primary.intense};
   color: ${({ theme }) => theme.colors.surface.text.onPrimary.onIntense};
   border: none;
-  padding: 8px 16px;
+  padding: ${({ theme }) => theme.spacing["3"]}
+    ${({ theme }) => theme.spacing["6"]};
   border-radius: 4px;
 `;
 

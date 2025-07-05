@@ -58,7 +58,7 @@ const StyledBox = styled.div<StyledBoxProps>(
       ? getIn(theme.spacing, $paddingRight)
       : undefined,
     border: "none",
-    padding: "16px",
+    padding: theme.spacing["5"],
     borderRadius: "4px",
   })
 );
