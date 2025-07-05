@@ -1,10 +1,14 @@
-import { Button } from "nexus-library";
+import { Box, Button } from "nexus-library";
 
 function App() {
   return (
-    <div>
+    <Box
+      backgroundColor="surface.background.gray.subtle"
+      color="surface.text.gray.normal"
+    >
       <Button onClick={() => console.log("clicked")}>Hello React Nexus</Button>
-    </div>
+      <p>Hi there!!!</p>
+    </Box>
   );
 }
 
