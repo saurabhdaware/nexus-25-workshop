@@ -60,3 +60,8 @@ pnpm install nexus-library --filter=app --workspace
 
 - Add theme colors and spacings to tokens
 - Add `Box` and `Button` component that use this theme
+
+### `step-5` branch: MCP Server
+
+- Add knowledgebase for `Box` and `Button` components
+- Add MCP server to the library
